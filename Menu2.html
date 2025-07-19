@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Menú 2</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #000000; /* Fondo negro estático */
+      font-family: Arial, sans-serif;
+    }
+
+    .menu {
+      display: flex;
+      gap: 30px;
+    }
+
+    button {
+      width: 100px;
+      height: 100px;
+      border-radius: 20px;
+      border: none;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+      box-shadow: 0 0 12px rgba(0,0,0,0.3);
+    }
+
+    button:hover {
+      transform: scale(1.1);
+    }
+
+    /* Botón 1: tonos morados y azules */
+    #btn2019 {
+      background: linear-gradient(-45deg, #6a00f4, #0077ff, #1a0033, #220044);
+      background-size: 400% 400%;
+      animation: gradientShift1 3s ease infinite;
+      box-shadow: 0 0 15px #6a00f4;
+    }
+
+    /* Botón 2: tonos cyan, verde y amarillo */
+    #btn2025 {
+      background: linear-gradient(-45deg, #00f0ff, #a1ff00, #fff700);
+      background-size: 400% 400%;
+      animation: gradientShift2 3s ease infinite;
+      box-shadow: 0 0 15px #a1ff00;
+    }
+
+    /* Animación gradiente tonos morados y azules */
+    @keyframes gradientShift1 {
+      0% {background-position: 0% 50%;}
+      50% {background-position: 100% 50%;}
+      100% {background-position: 0% 50%;}
+    }
+
+    /* Animación gradiente tonos cyan, verde y amarillo */
+    @keyframes gradientShift2 {
+      0% {background-position: 0% 50%;}
+      50% {background-position: 100% 50%;}
+      100% {background-position: 0% 50%;}
+    }
+
+    /* Botón 3 bloqueado gris */
+    .locked {
+      background-color: #555555;
+      cursor: not-allowed;
+      box-shadow: none;
+      opacity: 0.6;
+    }
+  </style>
+</head>
+<body>
+  <div class="menu">
+    <button id="btn2019" title="Ir a 2019.html"></button>
+    <button id="btn2025" title="Ir a 2025.html"></button>
+    <button class="locked" title="Bloqueado"></button>
+  </div>
+
+  <script>
+    document.getElementById('btn2019').addEventListener('click', () => {
+      window.location.href = '2019.html';
+    });
+
+    document.getElementById('btn2025').addEventListener('click', () => {
+      window.location.href = '2025.html';
+    });
+  </script>
+</body>
+</html>

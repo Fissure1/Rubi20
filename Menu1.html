@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Menú 1</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      background-color: #000000; /* Fondo negro estático */
+      font-family: 'Arial', sans-serif;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    h1 {
+      font-size: 1.8rem;
+      margin-bottom: 40px;
+      text-align: center;
+      max-width: 80%;
+    }
+
+    .menu {
+      display: flex;
+      gap: 30px;
+    }
+
+    button {
+      width: 100px;
+      height: 100px;
+      border-radius: 20px;
+      border: none;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+      box-shadow: 0 0 12px rgba(0,0,0,0.3);
+    }
+
+    button:hover {
+      transform: scale(1.1);
+    }
+
+    /* Botón de colores animados */
+    #colorBtn {
+      background: linear-gradient(-45deg, #6a00f4, #0077ff, #1a0033, #220044);
+      background-size: 400% 400%;
+      animation: gradientShift 3s ease infinite;
+      box-shadow: 0 0 15px #6a00f4;
+    }
+
+    /* Animación para el gradiente del botón colorido */
+    @keyframes gradientShift {
+      0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+
+    /* Botones bloqueados grises */
+    .locked {
+      background-color: #555555;
+      cursor: not-allowed;
+      box-shadow: none;
+      opacity: 0.6;
+    }
+  </style>
+</head>
+<body>
+  <h1>Rubí, estos botones llevan a recuerdos, puedes presionarlos.</h1>
+
+  <div class="menu">
+    <button id="colorBtn" title="Ir a 2019.html"></button>
+    <button class="locked" title="Bloqueado"></button>
+    <button class="locked" title="Bloqueado"></button>
+  </div>
+
+  <script>
+    const colorBtn = document.getElementById('colorBtn');
+
+    colorBtn.addEventListener('click', () => {
+      window.location.href = '2019.html';
+    });
+  </script>
+</body>
+</html>

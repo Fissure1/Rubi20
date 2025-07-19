@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Feliz Cumpleaños Rubí</title>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      font-family: 'Pacifico', cursive, Arial;
+    }
+
+    video#bgVideo {
+      position: fixed;
+      top: 0;
+      left: 0;
+      min-width: 100vw;
+      min-height: 100vh;
+      object-fit: cover;
+      z-index: -1;
+    }
+
+    .content {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    canvas {
+      width: 100%;
+      height: auto;
+      max-width: 800px;
+      background-color: transparent;
+    }
+
+    #startBtn {
+      display: none;
+      margin-top: 40px;
+      padding: 20px 40px;
+      font-size: 28px;
+      font-family: 'Pacifico', cursive;
+      color: white;
+      background-color: #e91e63;
+      border: none;
+      border-radius: 15px;
+      cursor: pointer;
+      box-shadow: 0 0 20px #e91e63;
+      animation: pulse 1s infinite, bounce 1.5s infinite;
+      z-index: 2;
+    }
+
+    @keyframes pulse {
+      0% { box-shadow: 0 0 20px #e91e63; }
+      50% { box-shadow: 0 0 40px #ff4081; }
+      100% { box-shadow: 0 0 20px #e91e63; }
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+  </style>
+</head>
+<body>
+  <!-- Video de fondo -->
+  <video id="bgVideo" autoplay muted loop playsinline>
+    <source src="fondo.mp4" type="video/mp4">
+    Tu navegador no soporta video HTML5.
+  </video>
+
+  <!-- Contenido encima del video -->
+  <div class="content">
+    <canvas id="canvas" width="800" height="400"></canvas>
+    <button id="startBtn">▶️ Press to Start</button>
+  </div>
+
+  <script>
+    const canvas = document.getElementById('canvas');
+    const ctx = canvas.getContext('2d');
+    const startBtn = document.getElementById('startBtn');
+
+    const message = "Feliz cumpleaños";
+    const name = "Rubí";
+
+    let messageIndex = 0;
+    let nameIndex = 0;
+
+    const texture = new Image();
+    texture.src = "textura de letras.png";
+
+    texture.onload = function () {
+      const pattern = ctx.createPattern(texture, "repeat");
+
+      function drawText() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+        ctx.fillStyle = pattern;
+        ctx.textAlign = "center";
+
+        ctx.font = "bold 48px Pacifico, cursive, Arial";
+        ctx.fillText(message.slice(0, messageIndex), canvas.width / 2, canvas.height / 2 - 30);
+
+        ctx.font = "bold 72px Pacifico, cursive, Arial";
+        ctx.fillText(name.slice(0, nameIndex), canvas.width / 2, canvas.height / 2 + 60);
+
+        if (messageIndex < message.length) {
+          messageIndex++;
+          setTimeout(drawText, 120);
+        } else if (nameIndex < name.length) {
+          nameIndex++;
+          setTimeout(drawText, 160);
+        }
+      }
+
+      drawText();
+    };
+
+    // Mostrar el botón después de 10 segundos
+    setTimeout(() => {
+      startBtn.style.display = "block";
+    }, 10000);
+
+    // Al hacer clic, redirigir a Menu1.html
+    startBtn.addEventListener('click', () => {
+      window.location.href = 'Menu1.html';
+    });
+  </script>
+</body>
+</html>

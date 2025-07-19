@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Video de Rubí (2019)</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      color: white;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(-45deg, #0d0d1a, #1c164e, #442967, #13243b);
+      background-size: 600% 600%;
+      animation: aurora 30s ease infinite;
+      text-align: center;
+      padding: 20px;
+    }
+
+    @keyframes aurora {
+      0% {
+        background-position: 0% 50%;
+      }
+      25% {
+        background-position: 50% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      75% {
+        background-position: 50% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 2rem;
+      color: #ffe6fa;
+      text-shadow: 0 0 12px rgba(0, 0, 0, 0.6);
+    }
+
+    iframe {
+      width: 90%;
+      max-width: 960px;
+      height: 60vh;
+      border: none;
+      border-radius: 12px;
+      box-shadow: 0 0 30px rgba(0, 0, 0, 0.6);
+      margin-bottom: 30px;
+    }
+
+    button#nextMenuBtn {
+      background-color: #7b4dff;
+      border: none;
+      color: white;
+      padding: 15px 40px;
+      font-size: 1.2rem;
+      border-radius: 10px;
+      cursor: pointer;
+      box-shadow: 0 0 15px #7b4dff;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+
+    button#nextMenuBtn:hover {
+      background-color: #a17bff;
+      transform: scale(1.05);
+    }
+
+    /* Para que el iframe use controles: en este caso, Google Drive no deja controlar el video desde iframe */
+    /* Si subes el video a un hosting propio, puedes usar la etiqueta <video> y agregar controls */
+  </style>
+</head>
+<body>
+  <h1>Los sueños de Rubí (2019)</h1>
+  <iframe src="https://drive.google.com/file/d/18qrhZSVvlyVy3xgANrCM33bybj43d2sb/preview"
+    allow="autoplay; fullscreen" allowfullscreen></iframe>
+
+  <button id="nextMenuBtn" onclick="location.href='Menu3.html'">Siguiente</button>
+</body>
+</html>

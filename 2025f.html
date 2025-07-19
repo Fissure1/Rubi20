@@ -1,0 +1,99 @@
+<!DOCTYPE html> 
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Remake de Rubí (2025)</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      color: white;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(-45deg, #00ffcc, #a0ff00, #ffff00, #00ffcc);
+      background-size: 600% 600%;
+      animation: vibrantShift 20s ease infinite;
+      text-align: center;
+    }
+
+    @keyframes vibrantShift {
+      0% {
+        background-position: 0% 50%;
+      }
+      25% {
+        background-position: 50% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      75% {
+        background-position: 50% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 2rem;
+      color: #000;
+      text-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
+    }
+
+    iframe {
+      width: 90%;
+      max-width: 960px;
+      height: 60vh;
+      border: none;
+      border-radius: 12px;
+      box-shadow: 0 0 30px rgba(0, 0, 0, 0.6);
+      background-color: black;
+    }
+
+    .btn-container {
+      margin-top: 30px;
+      display: flex;
+      justify-content: center;
+      width: 90%;
+      max-width: 300px;
+    }
+
+    button {
+      padding: 12px 24px;
+      font-size: 1.2rem;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      box-shadow: 0 0 15px rgba(0,0,0,0.5);
+      transition: background-color 0.3s ease;
+      color: white;
+      font-weight: bold;
+      background-color: #006633;
+      box-shadow: 0 0 20px #00ff99;
+    }
+
+    button:hover {
+      background-color: #009944;
+    }
+  </style>
+</head>
+<body>
+  <h1>Remake de Rubí (2025)</h1>
+  
+  <iframe src="https://drive.google.com/file/d/13g96AnaNMjQstDGmNknGKPu6hTgj8LW-/preview" allow="autoplay" allowfullscreen></iframe>
+
+  <div class="btn-container">
+    <button onclick="window.location.href='menu3.html'">Volver al menú</button>
+  </div>
+</body>
+</html>

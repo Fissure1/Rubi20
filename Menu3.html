@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Menú 3 - Todo desbloqueado</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #000000; /* Fondo negro estático */
+      font-family: Arial, sans-serif;
+    }
+
+    .menu {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      max-width: 800px;
+      width: 90%;
+      justify-content: center;
+    }
+
+    button {
+      flex: 1 1 150px;
+      min-width: 150px;
+      height: 100px;
+      border-radius: 20px;
+      border: none;
+      cursor: pointer;
+      color: white;
+      font-weight: bold;
+      font-size: 1.2rem;
+      box-shadow: 0 0 12px rgba(0,0,0,0.3);
+      transition: transform 0.3s ease;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-shadow: 0 0 8px rgba(0,0,0,0.5);
+    }
+
+    button:hover {
+      transform: scale(1.1);
+    }
+
+    /* Botón 2019 - morado/azul oscuro */
+    #btn2019 {
+      background: linear-gradient(-45deg, #6a00f4, #0077ff, #1a0033, #220044);
+      background-size: 400% 400%;
+      animation: gradientShift1 6s ease infinite;
+      box-shadow: 0 0 15px #6a00f4;
+    }
+
+    /* Botón 2025 - cyan/verde/amarillo */
+    #btn2025 {
+      background: linear-gradient(-45deg, #00ffff, #00cc44, #ffff33, #00ffff);
+      background-size: 400% 400%;
+      animation: gradientShift2 6s ease infinite;
+      box-shadow: 0 0 15px #00cc44;
+    }
+
+    /* Botón Playa - tonos rocosos naranjas y dorados */
+    #btnPlaya {
+      background: linear-gradient(-45deg, #d2691e, #ff8c00, #ffd700, #d2691e);
+      background-size: 400% 400%;
+      animation: gradientShift3 6s ease infinite;
+      box-shadow: 0 0 15px #ff8c00;
+    }
+
+    /* Botón Drive - colores arcoíris */
+    #btnDrive {
+      background: linear-gradient(-45deg, 
+        red, orange, yellow, green, cyan, blue, violet, red);
+      background-size: 800% 800%;
+      animation: rainbowShift 8s ease infinite;
+      box-shadow: 0 0 15px #ff00ff;
+    }
+
+    @keyframes gradientShift1 {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    @keyframes gradientShift2 {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    @keyframes gradientShift3 {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    @keyframes rainbowShift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+  </style>
+</head>
+<body>
+  <div class="menu">
+    <button id="btn2019" onclick="window.location.href='2019F.html'">2019</button>
+    <button id="btn2025" onclick="window.location.href='2025f.html'">2025</button>
+    <button id="btnPlaya" onclick="window.location.href='indexf.html'">Playa</button>
+    <button id="btnDrive" onclick="window.open('https://drive.google.com/drive/folders/1y1rnrGbw4nFIUFs5LphfoT9P-5rrWVuc?usp=drive_link', '_blank')">Drive</button>
+  </div>
+</body>
+</html>

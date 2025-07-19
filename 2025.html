@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Remake de Rubí (2025)</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      color: white;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(-45deg, #00ffcc, #a0ff00, #ffff00, #00ffcc);
+      background-size: 600% 600%;
+      animation: vibrantShift 20s ease infinite;
+      text-align: center;
+    }
+
+    @keyframes vibrantShift {
+      0% { background-position: 0% 50%; }
+      25% { background-position: 50% 50%; }
+      50% { background-position: 100% 50%; }
+      75% { background-position: 50% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 2rem;
+      color: #000;
+      text-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
+    }
+
+    iframe {
+      width: 90%;
+      max-width: 960px;
+      height: 60vh;
+      border: none;
+      border-radius: 12px;
+      box-shadow: 0 0 30px rgba(0, 0, 0, 0.6);
+      background-color: black;
+    }
+
+    #msg {
+      margin-top: 10px;
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.6);
+    }
+
+    .btn-container {
+      margin-top: 30px;
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      width: 90%;
+      max-width: 400px;
+    }
+
+    button {
+      flex: 1;
+      padding: 12px 24px;
+      font-size: 1.2rem;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      box-shadow: 0 0 15px rgba(0,0,0,0.5);
+      transition: background-color 0.3s ease;
+      color: white;
+      font-weight: bold;
+    }
+
+    #secretBtn {
+      display: none;
+      background-color: #660000;
+      box-shadow: none;
+      cursor: not-allowed;
+    }
+
+    #menuBtn {
+      background-color: #003322;
+      box-shadow: none;
+      cursor: not-allowed;
+    }
+
+    .active-secret {
+      background-color: #cc0000 !important;
+      box-shadow: 0 0 20px #ff4444 !important;
+      cursor: pointer !important;
+    }
+
+    .active-menu {
+      background-color: #006633 !important;
+      box-shadow: 0 0 20px #00ff99 !important;
+      cursor: pointer !important;
+    }
+
+    button:hover:enabled {
+      filter: brightness(1.1);
+    }
+  </style>
+</head>
+<body>
+  <h1>Remake de Rubí (2025)</h1>
+
+  <iframe src="https://drive.google.com/file/d/13g96AnaNMjQstDGmNknGKPu6hTgj8LW-/preview" allow="autoplay" allowfullscreen></iframe>
+
+  <!-- Mensaje sorpresa -->
+  <p id="msg">Espera un momento, hay sorpresas más adelante...</p>
+
+  <div class="btn-container">
+    <button id="secretBtn" disabled>No tocar</button>
+    <button id="menuBtn" disabled>Volver al menú</button>
+  </div>
+
+  <script>
+    // Habilita botón "Volver al menú" después de 4 minutos
+    setTimeout(() => {
+      const menuBtn = document.getElementById("menuBtn");
+      menuBtn.disabled = false;
+      menuBtn.classList.add("active-menu");
+      menuBtn.onclick = () => window.location.href = 'menu3.html';
+    }, 240000); // 4 minutos
+
+    // Habilita botón secreto después de 6 minutos
+    setTimeout(() => {
+      const secretBtn = document.getElementById("secretBtn");
+      const msg = document.getElementById("msg");
+
+      secretBtn.style.display = 'block';
+      secretBtn.disabled = false;
+      secretBtn.classList.add("active-secret");
+      secretBtn.onclick = () => window.location.href = 'secreto.html';
+
+      // Oculta el mensaje cuando aparece el botón secreto
+      msg.style.display = 'none';
+    }, 360000); // 6 minutos
+  </script>
+</body>
+</html>
